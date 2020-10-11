@@ -1,0 +1,152 @@
+﻿<Workspace>
+	<ModuleRelationships>
+		<Module ModuleID="0" SystemClassName="SegaMegaDrive" ModuleClassName="SegaMegaDrive" ModuleInstanceName="MD1600">
+			<ExportConnector ConnectorClassName="ControlPort" ConnectorInstanceName="Control Port 1" />
+			<ExportConnector ConnectorClassName="ControlPort" ConnectorInstanceName="Control Port 2" />
+			<ExportConnector ConnectorClassName="ControlPort" ConnectorInstanceName="Control Port 3" />
+			<ExportConnector ConnectorClassName="CartridgePort" ConnectorInstanceName="Cartridge Port" />
+			<ExportConnector ConnectorClassName="ExpansionPort" ConnectorInstanceName="Expansion Port" />
+		</Module>
+		<Module ModuleID="1" SystemClassName="SegaMegaDrive" ModuleClassName="Control6" ModuleInstanceName="Generic 6-Button Controller">
+			<ImportConnector ExportingModuleID="0" ConnectorClassName="ControlPort" ConnectorInstanceNameLocal="Control Port" ConnectorInstanceNameRemote="Control Port 1" />
+		</Module>
+		<Module ModuleID="2" SystemClassName="SegaMegaDrive" ModuleClassName="ROMLoader" ModuleInstanceName="Generic ROM Loader" />
+	</ModuleRelationships>
+	<ViewLayout>
+		<MainWindowState SizeX="800" SizeY="600" Maximized="1">
+			<MainDockedWindow ActiveHostedWindowID="1">
+				<HostedContentWindows>
+					<HostedWindow WindowID="1" ViewType="Dockable" WindowTitle="VDP - Image Window" />
+				</HostedContentWindows>
+				<HostedDockingWindows>
+					<DockingWindowFrame DockPos="Right" AutoHide="0" DesiredWidth="472" DesiredHeight="534" ActiveHostedWindowID="2">
+						<HostedContentWindows>
+							<HostedWindow WindowID="2" ViewType="Dockable" WindowTitle="Main 68000 - Disassembly" />
+							<HostedWindow WindowID="3" ViewType="Dockable" WindowTitle="Main 68000 - Active Disassembly" />
+							<HostedWindow WindowID="4" ViewType="Dockable" WindowTitle="Main 68000 - Trace" />
+						</HostedContentWindows>
+					</DockingWindowFrame>
+					<DockingWindowFrame DockPos="Left" AutoHide="0" DesiredWidth="500" DesiredHeight="834" ActiveHostedWindowID="5">
+						<HostedContentWindows>
+							<HostedWindow WindowID="5" ViewType="Dockable" WindowTitle="VDP - VRAM Pattern Viewer" />
+							<HostedWindow WindowID="6" ViewType="Dockable" WindowTitle="VDP - Debug Settings" />
+							<HostedWindow WindowID="7" ViewType="Dockable" WindowTitle="VDP - Registers" />
+						</HostedContentWindows>
+						<HostedDockingWindows>
+							<DockingWindowFrame DockPos="Bottom" AutoHide="0" DesiredWidth="256" DesiredHeight="94" ActiveHostedWindowID="8">
+								<HostedContentWindows>
+									<HostedWindow WindowID="8" ViewType="Dockable" WindowTitle="VDP - Palette" />
+								</HostedContentWindows>
+							</DockingWindowFrame>
+						</HostedDockingWindows>
+					</DockingWindowFrame>
+					<DockingWindowFrame DockPos="Right" AutoHide="0" DesiredWidth="422" DesiredHeight="926" ActiveHostedWindowID="10">
+						<HostedContentWindows>
+							<HostedWindow WindowID="9" ViewType="Dockable" WindowTitle="RAM - Memory Editor" />
+							<HostedWindow WindowID="10" ViewType="Dockable" WindowTitle="VDP - VRAM - Memory Editor" />
+						</HostedContentWindows>
+						<HostedDockingWindows>
+							<DockingWindowFrame DockPos="Bottom" AutoHide="0" DesiredWidth="249" DesiredHeight="247" ActiveHostedWindowID="11">
+								<HostedContentWindows>
+									<HostedWindow WindowID="11" ViewType="Dockable" WindowTitle="Main 68000 - Call Stack" />
+								</HostedContentWindows>
+							</DockingWindowFrame>
+						</HostedDockingWindows>
+					</DockingWindowFrame>
+					<DashboardWindowFrame DockPos="Bottom" AutoHide="0" DesiredWidth="800" DesiredHeight="526" Title="control">
+						<HostedDockingWindows>
+							<DockingWindowFrame RegionNo="0" ActiveHostedWindowID="12">
+								<HostedContentWindows>
+									<HostedWindow WindowID="12" ViewType="Dockable" WindowTitle="Main 68000 - Processor Control" />
+								</HostedContentWindows>
+							</DockingWindowFrame>
+							<DockingWindowFrame RegionNo="1" ActiveHostedWindowID="13">
+								<HostedContentWindows>
+									<HostedWindow WindowID="13" ViewType="Dockable" WindowTitle="Main 68000 - Registers" />
+								</HostedContentWindows>
+							</DockingWindowFrame>
+						</HostedDockingWindows>
+						<RegionLayout>
+							<DividerList>
+								<DividerListEntry DividerID="4" ParentDividerID="1" DistanceAlongParent="238" />
+							</DividerList>
+						</RegionLayout>
+					</DashboardWindowFrame>
+				</HostedDockingWindows>
+			</MainDockedWindow>
+			<FloatingWindows>
+				<DialogWindowFrame PosX="210" PosY="435" SizeX="264" SizeY="582" WindowID="14" ViewType="Dialog" Resizable="0" WindowTitle="Main 68000 - Watchpoints" />
+			</FloatingWindows>
+		</MainWindowState>
+		<ViewPresenterState ViewPresenterGroupName="VDPDebugMenu" ViewPresenterName="VRAMPatterns" Target="Device" DeviceInstanceName="VDP" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="5" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="ProcessorDebugMenu" ViewPresenterName="Watchpoints" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="14" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="MemoryReadDebugMenu" ViewPresenterName="MemoryEditor" Target="Device" DeviceInstanceName="RAM" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="9" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="MemoryReadDebugMenu" ViewPresenterName="MemoryEditor" Target="Device" DeviceInstanceName="VDP - VRAM" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="10" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="GenericAccessDebugMenu" ViewPresenterName="Registers" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="13" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="ProcessorDebugMenu" ViewPresenterName="ActiveDisassembly" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="3" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="ProcessorDebugMenu" ViewPresenterName="Trace" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="4" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="VDPDebugMenu" ViewPresenterName="Image" Target="Device" DeviceInstanceName="VDP" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="1" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="VDPDebugMenu" ViewPresenterName="Registers" Target="Device" DeviceInstanceName="VDP" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="7" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="GenericAccessDebugMenu" ViewPresenterName="DebugSettings" Target="Device" DeviceInstanceName="VDP" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="6" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="ProcessorDebugMenu" ViewPresenterName="ProcessorControl" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="12" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="ProcessorDebugMenu" ViewPresenterName="CallStack" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="11" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="VDPDebugMenu" ViewPresenterName="Palette" Target="Device" DeviceInstanceName="VDP" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="8" />
+			</ViewState>
+		</ViewPresenterState>
+		<ViewPresenterState ViewPresenterGroupName="ProcessorDebugMenu" ViewPresenterName="Disassembly" Target="Device" DeviceInstanceName="Main 68000" ModuleID="0">
+			<ViewState>
+				<WindowState WindowID="2" />
+			</ViewState>
+		</ViewPresenterState>
+	</ViewLayout>
+</Workspace>
