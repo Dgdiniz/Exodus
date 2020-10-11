@@ -1,6 +1,7 @@
 #include "S315_5313.h"
 #include "Image/Image.pkg"
 #include <thread>
+#include <functional>
 
 //----------------------------------------------------------------------------------------------------------------------
 // Constructors
